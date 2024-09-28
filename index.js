@@ -32,10 +32,14 @@ for (seat of allSeats) {
             }
         }
         else {
-            e.target.className = 'selected';
             countSeat += 1;
+            if (countSeat > 4) {
+                return alert('you cannot book more than 4 seats!')
+            }
+            e.target.className = 'selected';
             selectedSeatContainer.appendChild(card);
         }
+
 
         totalPrice = countSeat * 750;
         grandTotal = totalPrice;
